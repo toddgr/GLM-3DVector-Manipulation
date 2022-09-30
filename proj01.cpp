@@ -127,5 +127,18 @@ main() {
 	b = glm::vec3(4, -5, 6);
 	c = WhatPartOfALivesPerpToB(a, b);
 	printf("a = < %7.2f %7.2f %7.2f>, b = <%7.2f %7.2f %7.2f>\n", a[0], a[1], a[2], b[0], b[1], b[2]);
-	printf("c = <%7.2f %7.2f %7.2f>\n", c[0], c[1], c[2]);
+	printf("c = <%7.2f %7.2f %7.2f>\n\n", c[0], c[1], c[2]);
+
+	glm::vec3 q;
+	glm::vec3 r;
+	glm::vec3 s;
+	glm::vec3 n;
+
+	printf("---UnitSurfaceNormal---\n");
+	q = glm::vec3(1, 2, 3);
+	r = glm::vec3(4, -5, 6);
+	s = glm::vec3(4, 2, 3);
+	n = UnitSurfaceNormal(q, r, s);
+	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
+	printf("n = <%7.2f %7.2f %7.2f>\n\n", n[0], n[1], n[2]);
 }
