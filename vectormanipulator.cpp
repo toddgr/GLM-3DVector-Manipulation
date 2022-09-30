@@ -44,7 +44,13 @@ WhatPartOfALivesInBDir( glm::vec3 a, glm::vec3 b )
 glm::vec3
 WhatPartOfALivesPerpToB( glm::vec3 a, glm::vec3 b )
 {
-	glm::vec3 c;
+	// How much of vector a lives perpendicular to the b direction?
+	// We can do this by taking the vector resulting from WhatPartOfALivesInBDir
+	// and then subtract it from vector A.
+
+	glm::vec3 c = WhatPartOfALivesInBDir(a, b);
+	c -= c;
+	
 	return c;
 }
 
