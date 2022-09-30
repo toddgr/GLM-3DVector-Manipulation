@@ -92,7 +92,54 @@ Area( glm::vec3 q, glm::vec3 r, glm::vec3 s )
 bool
 IsPointInTriangle( glm::vec3 q, glm::vec3 r, glm::vec3 s, glm::vec3 p )
 {
-	return true;
+	// Is a point inside a triangle?
+	bool dotnQisPositive = false;
+	bool dotnRisPositive = false;
+	bool dotnSisPositive = false;
+
+	glm::vec3 vectorA;
+	glm::vec3 vectorB;
+
+	// Calculate surface normals of each vertex and point p
+	vectorA = r - q;
+	vectorB = s - q;
+	glm::vec3 n = glm::cross(vectorA, vectorB);
+
+	vectorA = r - q;
+	vectorB = p - q;
+	glm::vec3 nQ = glm::cross(vectorA, vectorB);
+
+	vectorA = s - r;
+	vectorB = p - r;
+	glm::vec3 nR = glm::cross(vectorA, vectorB);
+
+	vectorA = q - s;
+	vectorB = p - s;
+	glm::vec3 nS = glm::cross(vectorA, vectorB);
+
+	// Calculate dot products of each vertex with n
+	float dotnQ = glm::dot(n, nQ);
+	if (dotnQ > 0) {
+		dotnQisPositive = true;
+	}
+
+	float dotnR = glm::dot(n, nR);
+	if (dotnR > 0) {
+		dotnRisPositive = true;
+	}
+
+	float dotnS = glm::dot(n, nS);
+	if (dotnS > 0) {
+		dotnSisPositive = true;
+	}
+
+	// If all of the dot products are positive, then return true. Else false
+	if (dotnQisPositive && dotnRisPositive && dotnSisPositive) {
+		return true;
+		}
+	else {
+		return false;
+	}
 }
 
 
