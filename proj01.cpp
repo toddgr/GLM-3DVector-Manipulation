@@ -205,4 +205,15 @@ main() {
 	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
 	float area = Area(q, r, s);
 	printf("area = %7.2f\n\n", area);
+
+	printf("---IsPointInTriangle---\n");
+	q = glm::vec3(1, 1, 3);
+	r = glm::vec3(6, 1, 3);
+	s = glm::vec3(3, 4, 3);
+	glm::vec3 p = glm::vec3(4, 3, 3);
+
+	bool isIt = IsPointInTriangle(q, r, s, p);
+	printf(isIt ? "true" : "false");
+	printf("\n\n");
+
 }
