@@ -49,7 +49,7 @@ WhatPartOfALivesPerpToB( glm::vec3 a, glm::vec3 b )
 	// and then subtract it from vector A.
 
 	glm::vec3 c = WhatPartOfALivesInBDir(a, b);
-	c -= c;
+	c -= a;
 
 	return c;
 }
@@ -57,9 +57,19 @@ WhatPartOfALivesPerpToB( glm::vec3 a, glm::vec3 b )
 
 glm::vec3
 UnitSurfaceNormal( glm::vec3 q, glm::vec3 r, glm::vec3 s )
-{
-	glm::vec3 t;
-	return t;
+{	
+	// Finds the vector perpendicular to a plane created by the points q, r, s
+	// n = (R - Q) X (S - Q)
+
+	glm::vec3 n;
+	glm::vec3 vectorA = r - q;
+	glm::vec3 vectorB = s - q;
+	n = glm::cross(vectorA, vectorB);
+	
+	// Unitize normal
+	n = glm::normalize(n);
+
+	return n;
 }
 
 
