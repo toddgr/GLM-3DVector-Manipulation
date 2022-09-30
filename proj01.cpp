@@ -147,7 +147,14 @@ IsPointInTriangle( glm::vec3 q, glm::vec3 r, glm::vec3 s, glm::vec3 p )
 float
 DistanceFromPointToPlane( glm::vec3 q, glm::vec3 r, glm::vec3 s, glm::vec3 p )
 {
+	// What is the distance from a plane-- defined by points q, r, and s-- from a point p?
 	float distance;
+
+	// Calculate unitized normal vector, n
+	glm::vec3 n = UnitSurfaceNormal(q, r, s);
+	// Calculate distance with dot product
+	distance = glm::dot((p-q), n);
+
 	return distance;
 }
 
