@@ -3,7 +3,7 @@
 	Fall 2022
 
 	Project 1: Using GLM to manipulate 3D Vectors
-	To Compile: g++ -o proj1 vectormanipulator.cpp
+	To Compile: g++ -o proj1 proj01.cpp
 				./proj1
 */
 
@@ -50,7 +50,7 @@ WhatPartOfALivesPerpToB( glm::vec3 a, glm::vec3 b )
 
 	glm::vec3 c = WhatPartOfALivesInBDir(a, b);
 	c -= c;
-	
+
 	return c;
 }
 
@@ -101,6 +101,21 @@ WhoAmI( std::string &yourName, std::string &yourEmailAddress )
 ********************************/
 int
 main() {
-	printf("Main works :P\n");
-	return 0;
+	glm::vec3 a;
+	glm::vec3 b;
+	glm::vec3 c;
+	
+	printf("---WhatPartOfALivesInBDir---\n");
+	a = glm::vec3(1, 2, 3);
+	b = glm::vec3(4, -5, 6);
+	c = WhatPartOfALivesInBDir(a, b);
+	printf("a = < %7.2f %7.2f %7.2f>, b = <%7.2f %7.2f %7.2f>\n", a[0], a[1], a[2], b[0], b[1], b[2]);
+	printf("c = <%7.2f %7.2f %7.2f>\n\n", c[0], c[1], c[2]);
+
+	printf("---WhatPartOfALivesPerpToB---\n");
+	a = glm::vec3(1, 2, 3);
+	b = glm::vec3(4, -5, 6);
+	c = WhatPartOfALivesPerpToB(a, b);
+	printf("a = < %7.2f %7.2f %7.2f>, b = <%7.2f %7.2f %7.2f>\n", a[0], a[1], a[2], b[0], b[1], b[2]);
+	printf("c = <%7.2f %7.2f %7.2f>\n", c[0], c[1], c[2]);
 }
