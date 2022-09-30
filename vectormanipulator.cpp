@@ -28,7 +28,9 @@
 glm::vec3
 WhatPartOfALivesInBDir( glm::vec3 a, glm::vec3 b )
 {
+	// ||A||cos0 * unitBVector """
 	glm::vec3 c;
+	
 	return c;
 }
 
