@@ -76,7 +76,15 @@ UnitSurfaceNormal( glm::vec3 q, glm::vec3 r, glm::vec3 s )
 float
 Area( glm::vec3 q, glm::vec3 r, glm::vec3 s )
 {
-	float area;
+	// Finds the area of a 3D Triangle
+	// Area = 0.5 * ||(R-Q) X (S-Q)||
+
+	glm::vec3 n;
+	glm::vec3 vectorA = r - q;
+	glm::vec3 vectorB = s - q;
+	n = glm::cross(vectorA, vectorB);
+	float area = 0.5 * glm::length(n);
+
 	return area;
 }
 
@@ -141,4 +149,13 @@ main() {
 	n = UnitSurfaceNormal(q, r, s);
 	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
 	printf("n = <%7.2f %7.2f %7.2f>\n\n", n[0], n[1], n[2]);
+
+	printf("---Area---\n");
+	q = glm::vec3(1, 2, 3);
+	r = glm::vec3(4, -5, 6);
+	s = glm::vec3(4, 2, 3);
+	n = UnitSurfaceNormal(q, r, s);
+	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
+	float area = Area(q, r, s);
+	printf("area = %7.2f\n\n", area);
 }
