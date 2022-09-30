@@ -28,9 +28,15 @@
 glm::vec3
 WhatPartOfALivesInBDir( glm::vec3 a, glm::vec3 b )
 {
-	// ||A||cos0 * unitBVector """
+	// How much of vector a lives in the direction of vector b?
 	glm::vec3 c;
 	
+	// Unitize B vector
+	glm::vec3 unitBVector = glm::normalize(b);
+
+	float dotProduct = glm::dot(a, unitBVector);
+	c = dotProduct * unitBVector;
+
 	return c;
 }
 
