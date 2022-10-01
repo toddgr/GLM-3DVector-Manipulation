@@ -5,6 +5,8 @@
 	Project 1: Using GLM to manipulate 3D Vectors
 	To Compile: g++ -o proj1 proj01.cpp
 				./proj1
+				or
+				g++ proj01.cpp test01.o -o proj01
 */
 
 /********************************
@@ -24,13 +26,13 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/matrix_inverse.hpp"
 
-glm::vec3 WhatPartOfALivesInBDir(glm::vec3, glm::vec3);
-glm::vec3 WhatPartofALivesPerpToB(glm::vec3, glm::vec3);
-glm::vec3 UnitSurfaceNormal( glm::vec3, glm::vec3, glm::vec3);
-float Area( glm::vec3, glm::vec3, glm::vec3);
-bool IsPointInTriangle( glm::vec3, glm::vec3, glm::vec3, glm::vec3 );
-float DistanceFromPointToPlane( glm::vec3, glm::vec3, glm::vec3, glm::vec3 );
-void WhoAmI( std::string& , std::string &);
+// glm::vec3 WhatPartOfALivesInBDir(glm::vec3, glm::vec3);
+// glm::vec3 WhatPartofALivesPerpToB(glm::vec3, glm::vec3);
+// glm::vec3 UnitSurfaceNormal( glm::vec3, glm::vec3, glm::vec3);
+// float Area( glm::vec3, glm::vec3, glm::vec3);
+// bool IsPointInTriangle( glm::vec3, glm::vec3, glm::vec3, glm::vec3 );
+// float DistanceFromPointToPlane( glm::vec3, glm::vec3, glm::vec3, glm::vec3 );
+// void WhoAmI( std::string& , std::string &);
 
 
 /*******************************
@@ -116,7 +118,7 @@ WhatPartOfALivesPerpToB( glm::vec3 a, glm::vec3 b )
 	// and then subtract it from vector A.
 
 	glm::vec3 c = WhatPartOfALivesInBDir(a, b);
-	c -= a;
+	c = a - c;
 
 	return c;
 }
