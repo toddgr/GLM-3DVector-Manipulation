@@ -24,73 +24,6 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/matrix_inverse.hpp"
 
-glm::vec3 WhatPartOfALivesInBDir(glm::vec3, glm::vec3);
-glm::vec3 WhatPartofALivesPerpToB(glm::vec3, glm::vec3);
-glm::vec3 UnitSurfaceNormal( glm::vec3, glm::vec3, glm::vec3);
-float Area( glm::vec3, glm::vec3, glm::vec3);
-bool IsPointInTriangle( glm::vec3, glm::vec3, glm::vec3, glm::vec3 );
-float DistanceFromPointToPlane( glm::vec3, glm::vec3, glm::vec3, glm::vec3 );
-void WhoAmI( std::string& , std::string &);
-
-
-/*******************************
-			MAIN PROGRAM
-	(Comment out for submission)
-********************************/
-// int
-// main() {
-// 	glm::vec3 a;
-// 	glm::vec3 b;
-// 	glm::vec3 c;
-	
-// 	printf("---WhatPartOfALivesInBDir---\n");
-// 	a = glm::vec3(1, 2, 3);
-// 	b = glm::vec3(4, -5, 6);
-// 	c = WhatPartOfALivesInBDir(a, b);
-// 	printf("a = < %7.2f %7.2f %7.2f>, b = <%7.2f %7.2f %7.2f>\n", a[0], a[1], a[2], b[0], b[1], b[2]);
-// 	printf("c = <%7.2f %7.2f %7.2f>\n\n", c[0], c[1], c[2]);
-
-// 	printf("---WhatPartOfALivesPerpToB---\n");
-// 	a = glm::vec3(1, 2, 3);
-// 	b = glm::vec3(4, -5, 6);
-// 	c = WhatPartOfALivesPerpToB(a, b);
-// 	printf("a = < %7.2f %7.2f %7.2f>, b = <%7.2f %7.2f %7.2f>\n", a[0], a[1], a[2], b[0], b[1], b[2]);
-// 	printf("c = <%7.2f %7.2f %7.2f>\n\n", c[0], c[1], c[2]);
-
-// 	glm::vec3 q;
-// 	glm::vec3 r;
-// 	glm::vec3 s;
-// 	glm::vec3 n;
-
-// 	printf("---UnitSurfaceNormal---\n");
-// 	q = glm::vec3(1, 2, 3);
-// 	r = glm::vec3(4, -5, 6);
-// 	s = glm::vec3(4, 2, 3);
-// 	n = UnitSurfaceNormal(q, r, s);
-// 	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
-// 	printf("n = <%7.2f %7.2f %7.2f>\n\n", n[0], n[1], n[2]);
-
-// 	printf("---Area---\n");
-// 	q = glm::vec3(1, 2, 3);
-// 	r = glm::vec3(4, -5, 6);
-// 	s = glm::vec3(4, 2, 3);
-// 	n = UnitSurfaceNormal(q, r, s);
-// 	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
-// 	float area = Area(q, r, s);
-// 	printf("area = %7.2f\n\n", area);
-
-// 	printf("---IsPointInTriangle---\n");
-// 	q = glm::vec3(1, 1, 3);
-// 	r = glm::vec3(6, 1, 3);
-// 	s = glm::vec3(3, 4, 3);
-// 	glm::vec3 p = glm::vec3(4, 3, 3);
-
-// 	bool isIt = IsPointInTriangle(q, r, s, p);
-// 	printf(isIt ? "true" : "false");
-// 	printf("\n\n");
-
-//}
-
 
 glm::vec3
 WhatPartOfALivesInBDir( glm::vec3 a, glm::vec3 b )
@@ -232,3 +165,62 @@ WhoAmI( std::string &yourName, std::string &yourEmailAddress )
 	yourName = "Grace Todd";
 	yourEmailAddress = "toddgr@oregonstate.edu" ;
 }
+
+
+/*******************************
+			MAIN PROGRAM
+	(Comment out for submission)
+********************************/
+// int
+// main() {
+// 	glm::vec3 a;
+// 	glm::vec3 b;
+// 	glm::vec3 c;
+	
+// 	printf("---WhatPartOfALivesInBDir---\n");
+// 	a = glm::vec3(1, 2, 3);
+// 	b = glm::vec3(4, -5, 6);
+// 	c = WhatPartOfALivesInBDir(a, b);
+// 	printf("a = < %7.2f %7.2f %7.2f>, b = <%7.2f %7.2f %7.2f>\n", a[0], a[1], a[2], b[0], b[1], b[2]);
+// 	printf("c = <%7.2f %7.2f %7.2f>\n\n", c[0], c[1], c[2]);
+
+// 	printf("---WhatPartOfALivesPerpToB---\n");
+// 	a = glm::vec3(1, 2, 3);
+// 	b = glm::vec3(4, -5, 6);
+// 	c = WhatPartOfALivesPerpToB(a, b);
+// 	printf("a = < %7.2f %7.2f %7.2f>, b = <%7.2f %7.2f %7.2f>\n", a[0], a[1], a[2], b[0], b[1], b[2]);
+// 	printf("c = <%7.2f %7.2f %7.2f>\n\n", c[0], c[1], c[2]);
+
+// 	glm::vec3 q;
+// 	glm::vec3 r;
+// 	glm::vec3 s;
+// 	glm::vec3 n;
+
+// 	printf("---UnitSurfaceNormal---\n");
+// 	q = glm::vec3(1, 2, 3);
+// 	r = glm::vec3(4, -5, 6);
+// 	s = glm::vec3(4, 2, 3);
+// 	n = UnitSurfaceNormal(q, r, s);
+// 	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
+// 	printf("n = <%7.2f %7.2f %7.2f>\n\n", n[0], n[1], n[2]);
+
+// 	printf("---Area---\n");
+// 	q = glm::vec3(1, 2, 3);
+// 	r = glm::vec3(4, -5, 6);
+// 	s = glm::vec3(4, 2, 3);
+// 	n = UnitSurfaceNormal(q, r, s);
+// 	printf("q = < %7.2f %7.2f %7.2f>, r = <%7.2f %7.2f %7.2f>, s = <%7.2f %7.2f %7.2f>\n", q[0], q[1], q[2], r[0], r[1], r[2], s[0], s[1], s[2]);
+// 	float area = Area(q, r, s);
+// 	printf("area = %7.2f\n\n", area);
+
+// 	printf("---IsPointInTriangle---\n");
+// 	q = glm::vec3(1, 1, 3);
+// 	r = glm::vec3(6, 1, 3);
+// 	s = glm::vec3(3, 4, 3);
+// 	glm::vec3 p = glm::vec3(4, 3, 3);
+
+// 	bool isIt = IsPointInTriangle(q, r, s, p);
+// 	printf(isIt ? "true" : "false");
+// 	printf("\n\n");
+
+//}
