@@ -5,6 +5,8 @@
 	Project 1: Using GLM to manipulate 3D Vectors
 	To Compile: g++ -o proj1 proj01.cpp
 				./proj1
+				or
+				g++ proj01.cpp test01.o -o proj01
 */
 
 /********************************
@@ -49,7 +51,7 @@ WhatPartOfALivesPerpToB( glm::vec3 a, glm::vec3 b )
 	// and then subtract it from vector A.
 
 	glm::vec3 c = WhatPartOfALivesInBDir(a, b);
-	c -= a;
+	c = a - c;
 
 	return c;
 }
